@@ -65,6 +65,6 @@ runai bash <project-name>
 
 
 
-### References
+## References
 
 https://github.com/epfml/kubernetes-setup
