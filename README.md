@@ -56,6 +56,11 @@ docker push ic-registry.epfl.ch/nlp/<your-tag>
 ```
 runai submit <project-name> -i <docker-image> -g 1 --interactive -- sleep infinity
 ```
+or
+
+```
+runai submit -i ic-registry.epfl.ch/nlp/<docker-image>
+```
 
 5. Run bash and interact throughout terminal
 
