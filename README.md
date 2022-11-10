@@ -44,7 +44,7 @@ Login to docker with EPFL credential
 docker login ic-registry.epfl.ch
 ```
 
-Push docker image to the harbor
+Push docker image to the harbor, where you can find all the docker images 
 
 ```
 docker tag <your-tag> ic-registry.epfl.ch/nlp/<your-tag>
