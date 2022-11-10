@@ -1,0 +1,28 @@
+apiVersion: v1
+clusters:
+  - cluster:
+      certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1URXlOekV5TXpFd01Gb1hEVE14TVRFeU5URXlNekV3TUZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBSlZCCkpETHFENlpUQkVmRW5SbE93cjRWc0pmRXJ6dzRWcXR0Ui9tQWVtWDErdHhyRElteGJRbUE2NVh3VmVydHBnU1MKVXVmaGlwajFBdWErSHY0SjU0WURpU2RoZTBsZXF0V1d2b1YvaWg2cUw4Z1VQRVlrcE1jZEF4bURTUW5VeUdvNQpoYUhHcGwySi9ZVC9NaTVlNFowWSs0TTlROGhDMCttQ1QrUm5raGNOdXlzM2xpVllScUx6MGdiTldXcm9rdWpHCjM2OUdYd2VCTDlSU1hnZHFVemtWamowdk5ZQi9WWE1xc3NvVW4reHRBSWVTRXVWSjJxSHdMVEZjMTJTOXZBK2EKTHZjaU5JY2hsNUQyVVI1Z00zOXk0K011UjEvMEc4K1MvNDRMRTNraG1ZOVIzYjNCZmt1TkF2TlZManVucjVuUQpQcEpEaXQwUFBDdktROW5jSVgwQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZDaW1tYUtFN2plTUk1Z2tJT0xOQkJmM1c0Y0dNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFDT1dxb0FFN0RjL2tmZjZwRmlzemM2cjBQWU1ldlY5SzM4cXlJRUNKcjdnOURJcWRXbQo0QjVhcXhJb0grbzZKYkkzTjVMUWs3SzhrK1hoVnk5Vkp2Z2xwLzFLNkEwNFE2WXh3WEV0S05KV1hFczJNNHVUCkRYVzBFajM4aHNYMjRUNmRyWEwxNW4zbWthNTNVcXFzeGdtZnFXbFR1WlN1ZkNrM1pzak5PNnc3anRsMy85YWoKU2hWTHFqd2N0bTExaGwrQmxSUFBWU2M0dThUUjVZRWdHa0dqMGpmeDNNdnR5WW00Wk9uYzc2dEpxTUg5OXMzdwpLallmQURGWU4zRFk0c1E0UElDNU91c2l6UUdidXV2eVZkNGxRa25DQ2dlVmRjT21pY010QTg2VGNnRWRZRHV5Cm5Cci90QUxCNWZkM3J3TkdPaDlBK05MTTdPNnpsTDVyMG82SgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      server: https://10.90.36.16:6443
+    name: k8s.iccluster.epfl.ch
+contexts:
+  - context:
+      cluster: k8s.iccluster.epfl.ch
+      namespace: runai-lsir
+      user: generic
+    name: generic-runai-context
+current-context: generic-runai-context
+kind: Config
+preferences: {}
+users:
+  - name: generic
+    user:
+      auth-provider:
+        config:
+          airgapped: "true"
+          auth-flow: remote-browser
+          client-id: runai-cli-sso
+          idp-issuer-url: https://app.run.ai/auth/realms/EPFL
+          realm: EPFL
+          redirect-uri: https://app.run.ai/oauth-code
+          subject-claim-field: email
+        name: oidc
