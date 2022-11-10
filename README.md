@@ -8,8 +8,8 @@ Repository for running a Large Language Model (e.g., OPT 176B, Bloom 175B) with 
 ```
 cd ~
 mkdir .kube
-mv config .kube/config
-export KUBECONFIG=~/.kube/config
+mv config .kube/config_runai
+export KUBECONFIG=~/.kube/config_runai
 ```
 
 2. Download RunAI & Login
