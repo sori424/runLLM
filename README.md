@@ -51,3 +51,15 @@ docker tag <your-tag> ic-registry.epfl.ch/nlp/<your-tag>
 docker push ic-registry.epfl.ch/nlp/<your-tag>
 ```
 
+4. Submit docker image
+
+```
+runai submit <project-name> -i <docker-image> -g 1 --interactive -- sleep infinity
+```
+
+5. Run bash and interact throughout terminal
+
+```
+runai bash <project-name>
+```
+
