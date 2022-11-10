@@ -63,3 +63,8 @@ runai submit <project-name> -i <docker-image> -g 1 --interactive -- sleep infini
 runai bash <project-name>
 ```
 
+
+
+#### References
+
+https://github.com/epfml/kubernetes-setup
