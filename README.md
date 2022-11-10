@@ -30,7 +30,7 @@ runai whoami
 runai list jobs
 ```
 
-3. Docker build
+3. Docker build (Can be omitted, no need to push to the harbor, just using runai submit: e.g., submit -i ubuntu)
 
 Build a docker image
 
