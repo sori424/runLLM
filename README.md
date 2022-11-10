@@ -63,6 +63,11 @@ runai submit <project-name> -i <docker-image> -g 1 --interactive -- sleep infini
 runai bash <project-name>
 ```
 
+6. Delete project after done
+
+```
+runai delete <project-name>
+```
 
 
 ## References
