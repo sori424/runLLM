@@ -71,6 +71,19 @@ runai submit -i ic-registry.epfl.ch/nlp/<docker-image>
 runai bash <project-name>
 ```
 
+5-1. Run dockerfile with VSCode
+
+```
+runai submit test -i ic-registry.epfl.ch/nlp/sooh/test -g 1 --interactive --service-type=nodeport --port 30022:22
+```
+then, you can access throughout
+
+```
+ssh -p 30022 root@iccluster<mapped-iccluster-number>.iccluster.epfl.ch
+```
+
+here pwd will be `root`
+
 6. Delete project after done
 
 ```
