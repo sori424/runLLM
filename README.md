@@ -82,6 +82,8 @@ ssh -p 30022 root@iccluster<mapped-iccluster-number>.iccluster.epfl.ch
 
 here pwd will be `root`
 
+* You should specify lines on dockerfile regarding ssh access & port number
+
 6. Delete project after done
 
 ```
