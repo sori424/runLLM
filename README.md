@@ -54,22 +54,16 @@ docker push ic-registry.epfl.ch/nlp/<your-tag>
 4. Submit docker image
 
 ```
-runai submit <project-name> -i <docker-image> -g 1 --interactive -- sleep infinity --service-type=portforward --port 30022:22
-```
-
-or
-
-```
 runai submit -i ic-registry.epfl.ch/nlp/<docker-image>
 ```
 
-5. Run bash and interact throughout terminal
+** Run bash and interact throughout terminal
 
 ```
 runai bash <project-name>
 ```
 
-5-1. Run dockerfile with VSCode
+** Run dockerfile with VSCode
 
 ```
 runai submit test -i ic-registry.epfl.ch/nlp/sooh/test -g 1 --interactive --service-type=nodeport --port 30022:22
