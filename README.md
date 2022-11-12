@@ -56,8 +56,9 @@ docker push ic-registry.epfl.ch/nlp/<your-tag>
 4. Submit docker image
 
 ```
-runai submit <project-name> -i <docker-image> -g 1 --interactive -- sleep infinity
+runai submit <project-name> -i <docker-image> -g 1 --interactive -- sleep infinity --service-type=portforward --port 30022:22
 ```
+
 or
 
 ```
