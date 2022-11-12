@@ -57,18 +57,19 @@ docker push ic-registry.epfl.ch/nlp/<your-tag>
 runai submit -i ic-registry.epfl.ch/nlp/<docker-image>
 ```
 
-** Run bash and interact throughout terminal
+Then, run bash and interact throughout terminal
 
 ```
 runai bash <project-name>
 ```
 
-** Run dockerfile with VSCode
+4-1. Submit dockerfile to use with VSCode
 
 ```
 runai submit test -i ic-registry.epfl.ch/nlp/sooh/test -g 1 --interactive --service-type=nodeport --port 30022:22
 ```
-then, you can access throughout (`mapped-iccluster-number` can be checked by `runai list jobs`)
+
+Then, you can access throughout (`mapped-iccluster-number` can be checked by `runai list jobs`)
 
 ```
 ssh -p 30022 root@iccluster<mapped-iccluster-number>.iccluster.epfl.ch
@@ -76,7 +77,7 @@ ssh -p 30022 root@iccluster<mapped-iccluster-number>.iccluster.epfl.ch
 
 here pwd will be `root`
 
-* You should specify lines on dockerfile regarding ssh access & port number
+* You should specify lines on dockerfile regarding ssh access & port number (please refer [docker](https://github.com/run-ai/docs/blob/master/quickstart/python%2Bssh/Dockerfile)
 
 6. Delete project after done
 
