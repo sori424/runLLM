@@ -35,7 +35,7 @@ runai list jobs
 Build a docker image
 
 ```
-docker build . -t <your-tag>
+docker build . -t ic-registry.epfl.ch/nlp/<your-tag>
 ```
 
 Login to docker with EPFL credential
