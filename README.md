@@ -51,8 +51,6 @@ docker tag <your-tag> ic-registry.epfl.ch/nlp/<your-tag>
 docker push ic-registry.epfl.ch/nlp/<your-tag>
 ```
 
-(We should run docker image by `docker run -i -t ic-registry.epfl.ch/nlp/<your-tag> /bin/bash`, then use it as another Linux system -- as a virtual machine)
-
 4. Submit docker image
 
 ```
