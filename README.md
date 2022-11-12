@@ -3,7 +3,7 @@ Repository for running a Large Language Model (e.g., OPT 176B, Bloom 175B) with 
 
 * Basic setup: Used iccluster linux server
 
-1. Download config file and move it to direcotry `.kube` below your /root
+1. Download config file and move it to direcotry `.kube` below your `/root`
 
 ```
 cd ~
