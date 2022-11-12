@@ -77,7 +77,7 @@ ssh -p 30022 root@iccluster<mapped-iccluster-number>.iccluster.epfl.ch
 
 here pwd will be `root`
 
-* You should specify lines on dockerfile regarding ssh access & port number, please refer [docker](https://github.com/run-ai/docs/blob/master/quickstart/python%2Bssh/Dockerfile
+* You should specify lines on dockerfile regarding ssh access & port number, please refer [docker](https://github.com/run-ai/docs/blob/master/quickstart/python%2Bssh/Dockerfile)
 
 6. Delete project after done
 
