@@ -74,7 +74,7 @@ runai bash <project-name>
 ```
 runai submit test -i ic-registry.epfl.ch/nlp/sooh/test -g 1 --interactive --service-type=nodeport --port 30022:22
 ```
-then, you can access throughout
+then, you can access throughout (`mapped-iccluster-number` can be checked by `runai list jobs`)
 
 ```
 ssh -p 30022 root@iccluster<mapped-iccluster-number>.iccluster.epfl.ch
