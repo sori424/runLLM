@@ -101,8 +101,8 @@ Let's move on to the next step. [Alpa package](https://alpa.ai/tutorials/opt_ser
 # Update pip
 pip3 install --upgrade pip
 
-# Use your own CUDA version. Here cuda-cuda114 means cuda 11.5
-pip3 install cupy-cuda114
+# Use your own CUDA version. Here cuda-cuda115 means cuda 11.5
+pip3 install cupy-cuda115
 ```
 
 Check your cuda version by `nvidia-smi`. Then, check whether your system already has NCCL installed by the command below.
