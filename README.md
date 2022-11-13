@@ -105,7 +105,11 @@ pip3 install --upgrade pip
 pip3 install cupy-cuda114
 ```
 
-Check your cuda version by `nvidia-smi`. Then, check whether your system already has NCCL installed.
+Check your cuda version by `nvidia-smi`. Then, check whether your system already has NCCL installed by the command below.
+
+```
+python3 -c "from cupy.cuda import nccl"
+```
 
 Highly likely you'll get error `cupy is not in the path` related. Then, follow the process below.
 
