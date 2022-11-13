@@ -117,7 +117,7 @@ Highly likely you'll get error `cupy is not in the path` related. Then, follow t
 ```
 pip install -U setuptools pip
 pip install cupy -vvvv
-sudo CUDA_PATH=/opt/nvidia/cuda pip install cupy
+CUDA_PATH=/opt/nvidia/cuda pip install cupy
 ```
 
 Now, move on to install Alpa with python wheels. In this case, the wheel compatible with CUDA >= 11.1 and cuDNN >= 8.0.5.
