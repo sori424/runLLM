@@ -85,6 +85,49 @@ here pwd will be `root`
 runai delete <project-name>
 ```
 
+## Alpa Setup
+
+Let's move on to the next step. [Alpa package](https://alpa.ai/tutorials/opt_serving.html) will allow you to train large language models. 
+
+* Designed for large models: Cannot fit the model into a single GPU? Not a problem, Alpa is designed for training and serving big models like GPT-3.
+
+* Support commodity hardware: With Alpa, you can serve OPT-175B using your in-house GPU cluster, without needing the latest generations of A100 80GB GPUs nor fancy InfiniBand connections – no hardware constraints!
+
+* Flexible parallelism strategies: Alpa will automatically figure out the appropriate model-parallel strategies based on your cluster setup and your model architecture.
+
+### Install Alpa Prerequisites
+
+```
+# Update pip
+pip3 install --upgrade pip
+
+# Use your own CUDA version. Here cuda-cuda114 means cuda 11.5
+pip3 install cupy-cuda114
+```
+
+Check your cuda version by `nvidia-smi`. Then, check whether your system already has NCCL installed.
+
+Highly likely you'll get error `cupy is not in the path` related. Then, follow the process below.
+
+```
+pip install -U setuptools pip
+pip install cupy -vvvv
+sudo CUDA_PATH=/opt/nvidia/cuda pip install cupy
+```
+
+Now, move on to install Alpa with python wheels. In this case, the wheel compatible with CUDA >= 11.1 and cuDNN >= 8.0.5.
+
+```
+pip3 install alpa
+pip3 install jaxlib==0.3.15+cuda111.cudnn805 -f https://alpa-projects.github.io/wheels.html
+```
+
+Let's check the installation.
+
+```
+ray start --head
+python3 -m alpa.test_install
+```
 
 ## References
 
