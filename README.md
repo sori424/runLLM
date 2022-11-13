@@ -156,7 +156,12 @@ cd alpa/examples
 pip3 install -e .
 ```
 
+With -g 8 option in runAI, try to download weights of bloom and run a simple inference task.
 
+```
+cd llm_serving
+python3 textgen.py --model alpa/bloom
+```
 
 ## References
 
