@@ -134,6 +134,30 @@ ray start --head
 python3 -m alpa.test_install
 ```
 
+Now install alpa requirements.
+
+```
+pip3 install "transformers<=4.23.1" fastapi uvicorn omegaconf jinja2
+
+# Install torch corresponding to your CUDA version, e.g., for CUDA 11.3:
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+```
+
+Clone the alpa repo from git. If your machine does not have a git then, do `apt-get install git`. 
+
+```
+git clone https://github.com/alpa-projects/alpa.git
+```
+
+Then, install `llm_serving` package.
+
+```
+cd alpa/examples
+pip3 install -e .
+```
+
+
+
 ## References
 
 https://github.com/epfml/kubernetes-setup
