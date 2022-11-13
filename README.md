@@ -97,6 +97,7 @@ Let's move on to the next step. [Alpa package](https://alpa.ai/tutorials/opt_ser
 
 ### Install Alpa Prerequisites
 
+Check your cuda version by `nvidia-smi`.
 ```
 # Update pip
 pip3 install --upgrade pip
@@ -105,7 +106,7 @@ pip3 install --upgrade pip
 pip3 install cupy-cuda115
 ```
 
-Check your cuda version by `nvidia-smi`. Then, check whether your system already has NCCL installed by the command below.
+Then, check whether your system already has NCCL installed by the command below.
 
 ```
 python3 -c "from cupy.cuda import nccl"
