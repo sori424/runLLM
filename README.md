@@ -32,6 +32,8 @@ runai list jobs
 
 3. Docker build (Can be omitted, no need to push to the harbor, just using runai submit: e.g., submit -i ubuntu)
 
+`docker ps` to check whether you installed docker app
+
 Build a docker image
 
 ```
