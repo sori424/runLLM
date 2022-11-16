@@ -81,6 +81,12 @@ here pwd will be `root`
 
 * You should specify lines on dockerfile regarding ssh access & port number, please refer [docker](https://github.com/run-ai/docs/blob/master/quickstart/python%2Bssh/Dockerfile)
 
+if you want to mount dataset from different server, use the submit command below.
+
+```
+runai submit llm -i ic-registry.epfl.ch/nlp/sooh-llm -g 4 --cpu 1 --pvc runai-pv-nlpdata1:/mnt/u14157_ic_nlp_001_files_nfs/nlpdata1 --interactive --service-type=nodeport --port 30011:22 
+```
+
 6. Delete project after done
 
 ```
