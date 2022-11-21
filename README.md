@@ -87,6 +87,14 @@ if you want to mount dataset from different server, use the submit command below
 runai submit llm -i ic-registry.epfl.ch/nlp/sooh-llm -g 4 --cpu 1 --pvc runai-pv-nlpdata1:/mnt/u14157_ic_nlp_001_files_nfs/nlpdata1 --interactive --service-type=nodeport --port 30011:22 
 ```
 
+For the `train mode`, your outputs will be saved in `/scratch` if you submit the runai file with the command below.
+
+```
+runai submit llm -i ic-registry.epfl.ch/nlp/sooh-llm -g 4 --cpu 1 --pvc runai-nlp-scratch:/scratch
+```
+
+Then, you can access by `interactive mode` with giving the same `--pvc runai-nlp-scratch:/scratch` option.
+
 6. Delete project after done
 
 ```
