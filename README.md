@@ -65,7 +65,7 @@ Then, run bash and interact throughout terminal
 runai bash <project-name>
 ```
 
-4-1. Submit dockerfile to use with VSCode
+4-1. Submit dockerfile to use with VSCode (interactive mode)
 
 ```
 runai submit test -i ic-registry.epfl.ch/nlp/sooh/test -g 1 --interactive --service-type=nodeport --port 30022:22
