@@ -1,38 +1,53 @@
-### TODO: Make sure that the cuda driver's version matches (also below)
-### TODO: Make sure you have your .dockerignorefile
-FROM nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
+# Choose a docker template
+# ex: FROM python
+FROM --platform=linux/amd64 nvidia/cuda:11.0.3-devel-ubuntu18.04
 
-ENV HOME=./root
+# Set some basic ENV vars
+ENV HOME=/root
 ENV CONDA_PREFIX=${HOME}/.conda
 ENV CONDA=${CONDA_PREFIX}/condabin/conda
 
-### Use bash as the default shelll
-RUN chsh -s /bin/bash
-SHELL ["bash", "-c"]
+# Set default shell to /bin/bash
+SHELL ["/bin/bash", "-cu"]
 
 # Install dependencies
-RUN apt-get update && apt-get install -y --allow-downgrades --allow-change-held-packages --no-install-recommends openssh-server vim wget unzip tmux
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+RUN apt-get update && apt-get install -y --allow-downgrades --allow-change-held-packages --no-install-recommends \
+        build-essential \
+        cmake \
+        g++-4.8 \
+        git \
+        curl \
+        vim \
+        unzip \
+        wget \
+        tmux \
+        screen \
+        ca-certificates \
+        apt-utils \
+        libjpeg-dev \
+        libpng-dev
+WORKDIR ${HOME}
 
-# Cluster setup
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.11.0-Linux-x86_64.sh -O anaconda.sh
-RUN bash anaconda.sh -b -p ${CONDA_PREFIX}
+# Install coda ENV
+ENV env llm
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+RUN bash miniconda.sh -b -p ${CONDA_PREFIX}
 RUN ${CONDA} config --set auto_activate_base false
 RUN ${CONDA} init bash
+RUN ${CONDA} create --name $env python=3.8
 
-RUN echo "export LANG=en_US.UTF-8" >> ~/.bashrc
 
-# Setup conda env
-RUN ${CONDA} create --name testy -y python=3.8
-# RUN ${CONDA} install -n testy -y pytorch cudatoolkit=11.5 -c pytorch
+# Setup dependencies
+RUN ${CONDA} run -n $env pip install torch transformers 
 
-# WORKDIR ${CREA_DIR}
-# RUN mkdir ${CREA_DIR}
-
-# COPY ./testst.py .
+# Install OpenSSH for MPI to communicate between containers
+RUN apt-get install -y --no-install-recommends openssh-client openssh-server && \
+    mkdir -p /var/run/sshd
 
 # Set up SSH server
 RUN apt-get update && apt-get install -y openssh-server tmux vim
-RUN mkdir /var/run/sshd
+# RUN mkdir /var/run/sshd
 RUN echo 'root:root' | chpasswd
 RUN sed -i 's/#*PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
 # SSH login fix. Otherwise user is kicked off after login
@@ -40,5 +55,12 @@ RUN sed -i 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid
 ENV NOTVISIBLE="in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 EXPOSE 22
+
+# Install the Run:AI Python library and its dependencies
+RUN ${CONDA} run -n $env pip install runai prometheus_client==0.7.1
+
+# Prepare the data directory 
+RUN mkdir /mnt/nlpdata1
+RUN mkdir /mnt/scratch
 
 ENTRYPOINT ["/usr/sbin/sshd", "-D"]
