@@ -113,7 +113,7 @@ Let's move on to the next step. [Alpa package](https://alpa.ai/tutorials/opt_ser
 
 ### Install Alpa Prerequisites
 
-* If you want to convert 175b OPT, you'll need 700GB RAM memory.
+* If you want to convert 175b OPT, you'll need 700GB RAM memory. 350GB disk space.
 
 Check your cuda version by `nvidia-smi`.
 ```
