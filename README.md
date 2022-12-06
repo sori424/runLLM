@@ -22,13 +22,6 @@ chmod +x runai
 sudo ./install-runai.sh
 ```
 
-cf. When you want to submit jobs after all the installation.
-
-```
-export KUBECONFIG=~/.kube/config_runai
-runai login
-```
-
 Check out the existing list for a valid installation
 
 ```
@@ -62,6 +55,14 @@ docker push ic-registry.epfl.ch/nlp/<your-tag>
 
 4. Submit docker image
 
+cf. Whenever you want to submit job, you have to do the command below first.
+
+```
+export KUBECONFIG=~/.kube/config_runai
+runai login
+```
+
+Then, submit the job.
 ```
 runai submit -i ic-registry.epfl.ch/nlp/<docker-image>
 ```
