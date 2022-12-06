@@ -22,6 +22,13 @@ chmod +x runai
 sudo ./install-runai.sh
 ```
 
+cf. When you want to submit jobs after all the installation.
+
+```
+export KUBECONFIG=~/.kube/config_runai
+runai login
+```
+
 Check out the existing list for a valid installation
 
 ```
