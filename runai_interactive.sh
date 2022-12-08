@@ -21,13 +21,16 @@
 # * JUPYTER_CONFIG_DIR if you want to configure jupyter (for example change password)
 
 
-CLUSTER_USER=sooh # find this by running `id -un` on iccvlabsrv
-CLUSTER_USER_ID=255692 # find this by running `id -u` on iccvlabsrv
-CLUSTER_GROUP_NAME=NLP-StaffU # find this by running `id -gn` on iccvlabsrv
-CLUSTER_GROUP_ID=11131 # find this by running `id -g` on iccvlabsrv
+# all these infos can be accessed by `id` on your lab cluster
+CLUSTER_USER= # find this by running `id -un` on nlplabsrv
+CLUSTER_USER_ID= # find this by running `id -u` on nlplabsrv
+CLUSTER_GROUP_NAME= # find this by running `id -gn` on nlplabsrv
+CLUSTER_GROUP_ID= # find this by running `id -g` on nlplabsrv
 
 
-MY_IMAGE="ic-registry.epfl.ch/nlp/sooh/llm"
+MY_IMAGE="ic-registry.epfl.ch/....."
+
+# If you want to use jupyter notebook
 # JUPYTER_CONFIG_DIR="/cvlabdata2/home/lis/kubernetes_example/.jupyter"
 # MY_CMD="cd $MY_WORK_DIR && timeout --preserve-status --kill-after=1m 8h jupyter lab --ip=0.0.0.0 --no-browser"
 
