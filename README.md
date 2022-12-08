@@ -103,7 +103,9 @@ runai submit llm -i ic-registry.epfl.ch/nlp/sooh-llm -g 4 --cpu 1 --pvc runai-nl
 
 Then, you can access by `interactive mode` with giving the same `--pvc runai-nlp-sooh-nlpdata1:/nlpdata1` option.
 
-6. Delete project after done
+4-2. Instead, you can use `bash runai_interactive.sh` by correcting USER_ID, USER_NAME
+
+5. Delete project after done
 
 ```
 runai delete <project-name>
