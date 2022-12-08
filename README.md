@@ -152,8 +152,12 @@ Now, move on to install Alpa with python wheels. In this case, the wheel compati
 
 ```
 pip3 install alpa
-pip3 install jaxlib==0.3.15+cuda111.cudnn805 -f https://alpa-projects.github.io/wheels.html
+pip3 install jaxlib==0.3.22+cuda111.cudnn805 -f https://alpa-projects.github.io/wheels.html
 ```
+
+cf. Alpa modified the original jaxlib at the version jaxlib==0.3.22. Alpa regularly rebases the official jaxlib repository to catch up with the upstream.
+Keep in check [Alpa](https://alpa.ai/install.html).
+
 
 Let's check the installation.
 
