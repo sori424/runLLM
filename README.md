@@ -34,7 +34,7 @@ runai list jobs
 
 `docker ps` to check whether you installed docker app
 
-Build a docker image
+Build a docker image on your local
 
 ```
 docker build . -t ic-registry.epfl.ch/nlp/<your-tag>
