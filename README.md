@@ -55,19 +55,12 @@ docker push ic-registry.epfl.ch/nlp/<your-tag>
 
 4. Submit docker image
 
-cf. Whenever you want to submit job, you have to do the command below first.
-
-```
-export KUBECONFIG=~/.kube/config_runai
-runai login
-```
-
-Then, submit the job.
+Now, submit the job.
 ```
 runai submit -i ic-registry.epfl.ch/nlp/<docker-image>
 ```
 
-Then, run bash and interact throughout terminal
+Interact throughout terminal by bashing
 
 ```
 runai bash <project-name>
@@ -79,7 +72,12 @@ runai bash <project-name>
 runai submit test -i ic-registry.epfl.ch/nlp/sooh/test -g 1 --interactive --service-type=nodeport --port 30022:22
 ```
 
-Then, you can access throughout (`mapped-iccluster-number` can be checked by `runai list jobs`)
+Check your job by 
+```
+runai list jobs
+```
+
+Then, you can access throughout ssh
 
 ```
 ssh -p 30022 root@iccluster<mapped-iccluster-number>.iccluster.epfl.ch
@@ -89,7 +87,7 @@ here pwd will be `root`
 
 * You should specify lines on dockerfile regarding ssh access & port number, please refer [docker](https://github.com/run-ai/docs/blob/master/quickstart/python%2Bssh/Dockerfile)
 
-if you want to mount dataset from different server, use the submit command below.
+If you want to mount dataset from different server, use the submit command below.
 
 ```
 runai submit llm -i ic-registry.epfl.ch/nlp/sooh-llm -g 1 --cpu 1 --pvc runai-nlp-sooh-nlpdata1:/nlpdata1 --interactive --service-type=nodeport --port 30011:22 
@@ -105,11 +103,16 @@ Then, you can access by `interactive mode` with giving the same `--pvc runai-nlp
 
 4-2. Instead, you can use `bash runai_interactive.sh` by correcting USER_ID, USER_NAME
 
+
 5. Delete project after done
 
 ```
 runai delete <project-name>
 ```
+
+## Accelerator with Deepspeed
+
+TBA
 
 ## Alpa Setup
 
