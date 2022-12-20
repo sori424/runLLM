@@ -1,7 +1,7 @@
 # runLLM
 Repository for running a Large Language Model (e.g., OPT 176B, Bloom 175B) with using RunAI (EPFL cluster). 
 
-## Basic setup
+## Basic setup for RunAI
 
 1. Download config file and move it to direcotry `.kube` below your `/root`
 
