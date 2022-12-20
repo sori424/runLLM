@@ -34,7 +34,7 @@ runai list jobs
 
 `docker ps` to check whether you installed docker app
 
-Build a docker image on your local
+Build a docker image on your local disk.
 
 ```
 docker build . -t ic-registry.epfl.ch/nlp/<your-tag>
@@ -49,7 +49,6 @@ docker login ic-registry.epfl.ch
 Push docker image to the harbor, where you can find all the docker images 
 
 ```
-docker tag <your-tag> ic-registry.epfl.ch/nlp/<your-tag>
 docker push ic-registry.epfl.ch/nlp/<your-tag>
 ```
 
@@ -60,7 +59,13 @@ Now, submit the job.
 runai submit -i ic-registry.epfl.ch/nlp/<docker-image>
 ```
 
-Interact throughout terminal by bashing
+cf. If you want to watch the changes in every 2 seconds, do the command below. If you cannot use eatch command, and using Mac just do `brew install watch`.
+
+```
+watch runai list jobs
+```
+
+You can interact throughout terminal by bashing
 
 ```
 runai bash <project-name>
@@ -70,11 +75,6 @@ runai bash <project-name>
 
 ```
 runai submit test -i ic-registry.epfl.ch/nlp/sooh/test -g 1 --interactive --service-type=nodeport --port 30022:22
-```
-
-Check your job by 
-```
-runai list jobs
 ```
 
 Then, you can access throughout ssh
@@ -87,16 +87,18 @@ here pwd will be `root`
 
 * You should specify lines on dockerfile regarding ssh access & port number, please refer [docker](https://github.com/run-ai/docs/blob/master/quickstart/python%2Bssh/Dockerfile)
 
-If you want to mount dataset from different server, use the submit command below.
+If you want to mount dataset from your lab cluster, use the submit command below.
 
 ```
-runai submit llm -i ic-registry.epfl.ch/nlp/sooh-llm -g 1 --cpu 1 --pvc runai-nlp-sooh-nlpdata1:/nlpdata1 --interactive --service-type=nodeport --port 30011:22 
+runai submit <job_name> -i ic-registry.epfl.ch/nlp/<your-tag> -g 1 --cpu 1 --pvc runai-nlp-sooh-nlpdata1:/nlpdata1
 ```
 
 For the `train mode`, your outputs will be saved in `/scratch` if you submit the runai file with the command below.
 
+[NOTE] If you are using Mac's M1 memory chip, then you should build your image in this way for training mode! Unless, you cannot mount your volume into RunAI cluster (Permission denied).
+
 ```
-runai submit llm -i ic-registry.epfl.ch/nlp/sooh-llm -g 4 --cpu 1 --pvc runai-nlp-sooh-nlpdata1:/nlpdata1
+docker buildx build --push --platform=linux/amd64 -f Dockerfile -t ic-registry.epfl.ch/nlp/<your-tag> ./
 ```
 
 Then, you can access by `interactive mode` with giving the same `--pvc runai-nlp-sooh-nlpdata1:/nlpdata1` option.
