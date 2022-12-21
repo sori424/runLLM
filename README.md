@@ -114,7 +114,9 @@ runai delete <project-name>
 
 ## Accelerator with Deepspeed
 
-TBA
+
+
+https://huggingface.co/blog/bloom-inference-pytorch-scripts
 
 ## Alpa Setup
 
