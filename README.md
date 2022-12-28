@@ -1,5 +1,5 @@
 # runLLM
-Repository for running a Large Language Model (e.g., OPT 176B, Bloom 175B) with using RunAI (EPFL cluster). 
+Repository for running a Large Language Model (e.g., OPT, Bloom) with using RunAI (EPFL cluster). 
 
 ## Basic setup for RunAI
 
