@@ -59,7 +59,7 @@ Now, submit the job.
 runai submit -i ic-registry.epfl.ch/nlp/<docker-image>
 ```
 
-**If you want to watch the changes in every 2 seconds, do the command below. If you cannot use eatch command, and using Mac just do `brew install watch`.
+*If you want to watch the changes in every 2 seconds, do the command below. If you cannot use eatch command, and using Mac just do `brew install watch`.*
 
 ```
 watch runai list jobs
