@@ -59,7 +59,7 @@ Now, submit the job.
 runai submit -i ic-registry.epfl.ch/nlp/<docker-image>
 ```
 
-cf. If you want to watch the changes in every 2 seconds, do the command below. If you cannot use eatch command, and using Mac just do `brew install watch`.
+**If you want to watch the changes in every 2 seconds, do the command below. If you cannot use eatch command, and using Mac just do `brew install watch`.
 
 ```
 watch runai list jobs
@@ -92,8 +92,6 @@ If you want to mount dataset from your lab cluster, use the submit command below
 ```
 runai submit <job_name> -i ic-registry.epfl.ch/nlp/<your-tag> -g 1 --cpu 1 --pvc runai-nlp-sooh-nlpdata1:/nlpdata1
 ```
-
-cf. you can use `watch runai list jobs` to watch the changes of submitted job by every 2 seconds.
 
 For the `train mode`, your outputs will be saved in `/scratch` if you submit the runai file with the command below.
 
