@@ -93,6 +93,8 @@ If you want to mount dataset from your lab cluster, use the submit command below
 runai submit <job_name> -i ic-registry.epfl.ch/nlp/<your-tag> -g 1 --cpu 1 --pvc runai-nlp-sooh-nlpdata1:/nlpdata1
 ```
 
+cf. you can use `watch runai list jobs` to watch the changes of submitted job by every 2 seconds.
+
 For the `train mode`, your outputs will be saved in `/scratch` if you submit the runai file with the command below.
 
 [NOTE] If you are using Mac's M1 memory chip, then you should build your image in this way for training mode! Unless, you cannot mount your volume into RunAI cluster (Permission denied).
