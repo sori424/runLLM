@@ -124,6 +124,9 @@ python bloom-accelerate-inference.py --name /nlpdata1/home/sooh/bloom/bloom --ba
 
 https://huggingface.co/blog/bloom-inference-pytorch-scripts
 
+
+https://huggingface.co/blog/bloom-inference-pytorch-scripts
+
 ## OPT175b
 
 **Alpa**
