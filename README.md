@@ -116,7 +116,7 @@ runai delete <project-name>
 
 **Accelerator with Deepspeed**
 
-For BLOOM, I used the accelerate package. You can use the saved weights located in /nlpdata1/home/sooh/bloom/bloom
+For BLOOM, I used the accelerate package. You can use the saved weights located in `/nlpdata1/home/sooh/bloom/bloom`
 
 ```
 python bloom-accelerate-inference.py --name /nlpdata1/home/sooh/bloom/bloom --batch_size 1
@@ -203,7 +203,7 @@ pip3 install -e .
 ```
 Whoooa! Finally!
 Let's start inference with the converted model weights for alpa package.
-(I converted the original weights into singleton -> numpy format for alpa: saved in /nlpdata1/share/models/opt-175b)
+(I converted the original weights into singleton -> numpy format for alpa: saved in `/nlpdata1/share/models/opt-175b`)
 
 You need at least 8 gpus (40gb) for inference.
 
