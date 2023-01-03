@@ -137,8 +137,13 @@ Check your cuda version by `nvidia-smi`.
 # Update pip
 pip3 install --upgrade pip
 
-# Use your own CUDA version. Here cuda-cuda115 means cuda 11.5
-pip3 install cupy-cuda115
+# Use your own CUDA version. Here cuda-cuda113 means cuda 11.3
+pip3 install cupy-cuda113
+```
+
+Instead, you can use
+```
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c nvidia -c conda-forge
 ```
 
 Then, check whether your system already has NCCL installed by the command below.
@@ -195,12 +200,17 @@ cd alpa/examples
 pip3 install -e .
 ```
 
-With -g 8 option in runAI, try to download weights of bloom and run a simple inference task.
+Let's start inference with the converted model weights for alpa package! 
+(I converted the original weights into singleton -> numpy format for alpa: saved in /nlpdata1/share/models/opt-175b)
+
+You need at least 8 gpus (40gb) for inference.
 
 ```
 cd llm_serving
-python3 textgen.py --model alpa/bloom
+python3 textgen.py --model alpa/opt-175b
 ```
+
+
 
 ## References
 
