@@ -128,13 +128,7 @@ https://huggingface.co/blog/bloom-inference-pytorch-scripts
 
 **Alpa**
 
-Let's move on to the next step. [Alpa package](https://alpa.ai/tutorials/opt_serving.html) will allow you to use LLM for inference. 
-
-* Designed for large models: Cannot fit the model into a single GPU? Not a problem, Alpa is designed for training and serving big models like GPT-3.
-
-* Support commodity hardware: With Alpa, you can serve OPT-175B using your in-house GPU cluster, without needing the latest generations of A100 80GB GPUs nor fancy InfiniBand connections – no hardware constraints!
-
-* Flexible parallelism strategies: Alpa will automatically figure out the appropriate model-parallel strategies based on your cluster setup and your model architecture.
+For the OPT175b model, I used [Alpa package](https://alpa.ai/tutorials/opt_serving.html) which will allow you to use LLM for inference. 
 
 ### Install Alpa Prerequisites
 
