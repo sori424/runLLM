@@ -146,7 +146,7 @@ pip3 install --upgrade pip
 pip3 install cupy-cuda113
 ```
 
-Instead, you can use
+Instead, you can use (to fix [this error](https://github.com/cupy/cupy/issues/5211))
 ```
 conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -c nvidia -c conda-forge
 ```
