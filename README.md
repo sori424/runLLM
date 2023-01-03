@@ -112,15 +112,23 @@ Then, you can access by `interactive mode` with giving the same `--pvc runai-nlp
 runai delete <project-name>
 ```
 
-## Accelerator with Deepspeed
+## BLOOM
 
+**Accelerator with Deepspeed**
 
+For BLOOM, I used the accelerate package. You can use the saved weights located in /nlpdata1/home/sooh/bloom/bloom
+
+```
+python bloom-accelerate-inference.py --name /nlpdata1/home/sooh/bloom/bloom --batch_size 1
+```
 
 https://huggingface.co/blog/bloom-inference-pytorch-scripts
 
-## Alpa Setup
+## OPT175b
 
-Let's move on to the next step. [Alpa package](https://alpa.ai/tutorials/opt_serving.html) will allow you to train large language models. 
+**Alpa**
+
+Let's move on to the next step. [Alpa package](https://alpa.ai/tutorials/opt_serving.html) will allow you to use LLM for inference. 
 
 * Designed for large models: Cannot fit the model into a single GPU? Not a problem, Alpa is designed for training and serving big models like GPT-3.
 
@@ -130,7 +138,7 @@ Let's move on to the next step. [Alpa package](https://alpa.ai/tutorials/opt_ser
 
 ### Install Alpa Prerequisites
 
-* If you want to convert 175b OPT, you'll need 700GB RAM memory. 350GB disk space.
+* If you want to convert the weight format of 175b OPT, you'll need 700GB RAM memory. 350GB disk space (singleton) + 350GB disk space (alpa numpy). 
 
 Check your cuda version by `nvidia-smi`.
 ```
@@ -199,8 +207,8 @@ Then, install `llm_serving` package.
 cd alpa/examples
 pip3 install -e .
 ```
-
-Let's start inference with the converted model weights for alpa package! 
+Whoooa! Finally!
+Let's start inference with the converted model weights for alpa package.
 (I converted the original weights into singleton -> numpy format for alpa: saved in /nlpdata1/share/models/opt-175b)
 
 You need at least 8 gpus (40gb) for inference.
