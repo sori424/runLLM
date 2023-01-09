@@ -136,7 +136,7 @@ For the OPT175b model, I used [Alpa package](https://alpa.ai/tutorials/opt_servi
 ### Install Alpa Prerequisites
 
 * If you want to convert the weight format of 175b OPT, you'll need 700GB RAM memory. 350GB disk space (singleton) + 350GB disk space (alpa numpy). 
-* If you are a nlp lab member, you can use the converted opt weight for alpa package located in /nlpdata1/share/models/opt-175b/opt-175b-np
+* If you are a nlp lab member, you can use the converted opt weight for alpa package located in `/nlpdata1/share/models/opt-175b/opt-175b-np`.
 
 Check your cuda version by `nvidia-smi`.
 ```
