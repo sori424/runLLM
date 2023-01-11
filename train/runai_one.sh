@@ -13,8 +13,8 @@
 #	- enters MY_WORK_DIR directory (set below) and runs `python hello_half.py`
 
 
-CLUSTER_USER=sooh # find this by running `id -un` on iccvlabsrv
-CLUSTER_USER_ID=255692 # find this by running `id -u` on iccvlabsrv
+CLUSTER_USER= # find this by running `id -un` on iccvlabsrv
+CLUSTER_USER_ID= # find this by running `id -u` on iccvlabsrv
 CLUSTER_GROUP_NAME=NLP-StaffU # find this by running `id -gn` on iccvlabsrv
 CLUSTER_GROUP_ID=11131 # find this by running `id -g` on iccvlabsrv
 
@@ -32,7 +32,7 @@ echo "Job [$arg_job_name]"
 runai submit $arg_job_name \
 	-i $MY_IMAGE \
 	--gpu 1 \
-	--pvc runai-nlp-sooh-nlpdata1:/nlpdata1 
+	--pvc runai-nlp-$CLUSTER_USER-nlpdata1:/nlpdata1 
 
 
 # --command -- "/scratch/sooh/entrypoint.sh"
