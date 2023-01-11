@@ -21,8 +21,8 @@
 # * JUPYTER_CONFIG_DIR if you want to configure jupyter (for example change password)
 
 
-CLUSTER_USER=sooh # find this by running `id -un` on iccvlabsrv
-CLUSTER_USER_ID=255692 # find this by running `id -u` on iccvlabsrv
+CLUSTER_USER= # find this by running `id -un` on iccvlabsrv
+CLUSTER_USER_ID= # find this by running `id -u` on iccvlabsrv
 CLUSTER_GROUP_NAME=NLP-StaffU # find this by running `id -gn` on iccvlabsrv
 CLUSTER_GROUP_ID=11131 # find this by running `id -g` on iccvlabsrv
 
@@ -42,7 +42,7 @@ runai submit $arg_job_name \
 	--gpu 8 \
     --cpu 10 \
 	--memory 450G \
-	--pvc runai-nlp-sooh-nlpdata1:/nlpdata1 \
+	--pvc runai-nlp-$CLUSTER_USER-nlpdata1:/nlpdata1 \
 	--large-shm \
 	-e USER=$CLUSTER_USER \
 	-e USER_ID=$CLUSTER_USER_ID \
