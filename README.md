@@ -25,7 +25,7 @@ sudo ./install-runai.sh
 Check out the existing list for a valid installation
 
 ```
-runai config project nlp
+runai config project nlp-<your gaspar id>
 runai whoami
 runai list jobs
 ```
